@@ -10,6 +10,7 @@ requires-python = ">=3.13"
 dependencies = [
     "fastapi>=0.162.0",
     "opencv-python>=4.10",
+    "pydicom>=3.0.2",
     "tensorflow>=2.16",
     "uvicorn>=0.54.0",
 ]
@@ -31,3 +32,6 @@ dev = [
 exclude = [
     "detector_neumonia.py",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
