@@ -1,18 +1,14 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
-from tkinter import *
-from tkinter import ttk, font, filedialog, Entry
-
-from tkinter.messagebox import askokcancel, showinfo, WARNING
-import getpass
-from PIL import ImageTk, Image
 import csv
-import pyautogui
-import tkcap
-import img2pdf
+from tkinter import *
+from tkinter import filedialog, font, ttk
+from tkinter.messagebox import WARNING, askokcancel, showinfo
+
 import numpy as np
-import time
+import tkcap
+from PIL import Image, ImageTk
+
 tf.compat.v1.disable_eager_execution()
 tf.compat.v1.experimental.output_all_intermediates(True)
 import cv2
@@ -208,13 +204,13 @@ class App:
         print("OK")
         self.text_img2.image_create(END, image=self.img2)
         self.text2.insert(END, self.label)
-        self.text3.insert(END, "{:.2f}".format(self.proba) + "%")
+        self.text3.insert(END, f"{self.proba:.2f}" + "%")
 
     def save_results_csv(self):
         with open("historial.csv", "a") as csvfile:
             w = csv.writer(csvfile, delimiter="-")
             w.writerow(
-                [self.text1.get(), self.label, "{:.2f}".format(self.proba) + "%"]
+                [self.text1.get(), self.label, f"{self.proba:.2f}" + "%"]
             )
             showinfo(title="Guardar", message="Los datos se guardaron con éxito.")
 
