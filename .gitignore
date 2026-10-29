@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Modelos pesados
+*.h5
+*.hdf5
+*.pt
+*.onnx
+Model/
+models/
+
+
+# Datos y secretos
+data/raw/
+.env
+*.log

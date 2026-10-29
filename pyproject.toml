@@ -1,0 +1,22 @@
+[project]
+name = "uao-neumonia"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "carolinadoradouao", email = "carolina.dorado@uao.edu.co" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.162.0",
+    "opencv-python>=4.10",
+    "tensorflow>=2.16",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+uao-neumonia = "uao_neumonia:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
